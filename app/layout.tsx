@@ -38,7 +38,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
             fontSans.variable
           )}
         >
-          <LayoutContent>{children}</LayoutContent>
+          <div className="relative flex min-h-screen flex-col">
+            <LayoutContent>
+              <main>{children}</main>
+            </LayoutContent>
+          </div>
         </body>
       </html>
     </>

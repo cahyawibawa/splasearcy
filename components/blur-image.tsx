@@ -35,10 +35,10 @@ export default function BlurImage({ src, alt, rounded }: BlurImageProps) {
         } ${rounded ? 'rounded-full' : ''}`}
         onLoadingComplete={() => setLoading(false)}
       />
-      <div className="absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center gap-8 rounded-lg p-4 text-center opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
+      <div className="absolute left-0 top-0 flex size-full flex-col items-center justify-center gap-8 rounded-lg p-4 text-center opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
         <p className="font-medium leading-6 text-white">{alt}</p>
-        <Button variant={'default'} onClick={handleCopy}>
-          <CopyIcon className="mr-2 h-5 w-5" />
+        <Button onClick={handleCopy}>
+          <CopyIcon className="mr-2 size-4" />
           Copy URL
         </Button>
       </div>
