@@ -1,18 +1,10 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: 'Splasearcy',
+  name: 'Lashpic',
   description:
-    'Beautifully designed components built with Radix UI and Tailwind CSS.',
-  mainNav: [
-    {
-      title: '',
-      href: '/',
-    },
-  ],
+    'Photo stock search engine that helps you find the best images for your project.',
   links: {
-    twitter: 'https://twitter.com/shadcn',
-    github: 'https://github.com/cahyawibawa/splasearcy',
-    docs: 'https://ui.shadcn.com',
+    github: 'https://github.com/cahyawibawa/lashpic',
   },
 }
