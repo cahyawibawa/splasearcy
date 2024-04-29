@@ -5,7 +5,6 @@ import { siteConfig } from '@/config/site'
 import { fontSans } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
 import LayoutContent from '@/components/layout-content'
-import { TailwindIndicator } from '@/components/tailwind-indicator'
 
 export const metadata: Metadata = {
   title: {
@@ -17,6 +16,21 @@ export const metadata: Metadata = {
     { media: '(prefers-color-scheme: light)', color: 'white' },
     { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: siteConfig.url,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+    creator: '@kyuotaka',
+  },
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon-16x16.png',
