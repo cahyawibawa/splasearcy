@@ -16,7 +16,7 @@ export default function IndexPage() {
     <Shell>
       <PageHeader
         as="section"
-        className="mx-auto items-center gap-2 text-center"
+        className="mx-auto items-center gap-2 text-center font-heading"
         withPadding
       >
         <PageHeaderHeading

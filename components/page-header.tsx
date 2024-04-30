@@ -31,7 +31,7 @@ function PageHeader({
 }
 
 const headingVariants = cva(
-  'font-bold leading-tight tracking-tighter lg:leading-[1.1] ',
+  'font-medium leading-loose tracking-tighter lg:leading-[1.1] ',
   {
     variants: {
       size: {

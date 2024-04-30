@@ -2,11 +2,12 @@ import '@/styles/globals.css'
 import { Metadata } from 'next'
 
 import { siteConfig } from '@/config/site'
-import { fontSans } from '@/lib/fonts'
+import { fontHeading, fontMono, fontSans } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
 import LayoutContent from '@/components/layout-content'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://lashpic.vercel.app/'),
   title: {
     default: siteConfig.name,
     template: `%s - ${siteConfig.name}`,
@@ -49,7 +50,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <body
           className={cn(
             'min-h-screen bg-background font-sans antialiased',
-            fontSans.variable
+            fontSans.variable,
+            fontMono.variable,
+            fontHeading.variable
           )}
         >
           <div className="relative flex min-h-screen flex-col">
