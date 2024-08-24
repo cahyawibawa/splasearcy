@@ -3,16 +3,17 @@ import Link from 'next/link'
 import { siteConfig } from '@/config/site'
 import { buttonVariants } from '@/components/ui/button'
 import { Icons } from '@/components/icons'
-import { MainNav } from '@/components/main-nav'
-import { ThemeToggle } from '@/components/theme-toggle'
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 w-full bg-background">
-      <div className="container flex h-16 items-center">
-        <MainNav />
-        <div className="flex flex-1 items-center justify-end space-x-4">
-          <nav className="flex items-center space-x-1">
+    <header className="sticky top-0 z-20">
+      <div className="flex w-full flex-col justify-between gap-3 bg-white p-3 backdrop-blur  supports-[backdrop-filter]:bg-white/60 md:h-16 md:flex-row md:items-center lg:px-4 ">
+        <div className="flex w-full items-center gap-8">
+          <Link href="/" className="flex items-center space-x-2">
+            <Icons.logo className="size-6 grayscale" />
+            {/* <span className="inline-block font-bold">{siteConfig.name}</span> */}
+          </Link>
+          <nav className="ml-auto flex items-center space-x-1">
             <Link
               href={siteConfig.links.github}
               target="_blank"
@@ -20,18 +21,18 @@ export function SiteHeader() {
             >
               <div
                 className={buttonVariants({
-                  size: 'sm',
+                  size: 'icon',
                   variant: 'ghost',
                 })}
               >
-                <Icons.gh className="size-4" />
+                <Icons.gitHub className="size-4" />
                 <span className="sr-only">GitHub</span>
               </div>
             </Link>
-            <ThemeToggle />
           </nav>
         </div>
       </div>
     </header>
+    // todo : add filter navigation
   )
 }

@@ -1,10 +1,12 @@
 import '@/styles/globals.css'
 import { Metadata } from 'next'
+import { GeistMono } from 'geist/font/mono'
+import { GeistSans } from 'geist/font/sans'
+import { Toaster } from 'sonner'
 
 import { siteConfig } from '@/config/site'
-import { fontHeading, fontMono, fontSans } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
-import LayoutContent from '@/components/layout-content'
+import { SiteHeader } from '@/components/site-header'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://lashpic.vercel.app/'),
@@ -45,23 +47,20 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <>
-      <html lang="en" suppressHydrationWarning>
-        <body
-          className={cn(
-            'min-h-screen bg-background font-sans antialiased',
-            fontSans.variable,
-            fontMono.variable,
-            fontHeading.variable
-          )}
-        >
-          <div className="relative flex min-h-screen flex-col">
-            <LayoutContent>
-              <main>{children}</main>
-            </LayoutContent>
-          </div>
-        </body>
-      </html>
-    </>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn(
+          'min-h-screen bg-white font-sans antialiased',
+          GeistSans.variable,
+          GeistMono.variable
+        )}
+      >
+        <div className="relative flex max-w-screen-2xl flex-col">
+          <SiteHeader />
+          <main className="container mx-auto px-4 py-2">{children}</main>
+        </div>
+        <Toaster />
+      </body>
+    </html>
   )
 }

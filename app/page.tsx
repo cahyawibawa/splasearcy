@@ -1,33 +1,30 @@
-import { buttonVariants } from '@/components/ui/button'
 import {
   PageActions,
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
 } from '@/components/page-header'
-import RQPhotoList from '@/components/photo-list'
-import QueryProvider from '@/components/query-provider'
+import PhotoGallery from '@/components/photos/photo-gallery'
 import ScrollToTop from '@/components/scroll-top'
 import Search from '@/components/search'
-import { Shell } from '@/components/shell'
 
 export default function IndexPage() {
   return (
-    <Shell>
+    <>
       <PageHeader
         as="section"
-        className="mx-auto items-center gap-2 text-center font-heading"
+        className="mx-auto items-center gap-2 text-center"
         withPadding
       >
         <PageHeaderHeading
-          className="animate-fade-up"
+          className="animate-fade-up font-sans text-[22px] sm:text-[30px] md:text-[36px]"
           style={{ animationDelay: '0.20s', animationFillMode: 'both' }}
-          size="lg"
         >
-          Where the world of images lives
+          What can I find photos for you today?
         </PageHeaderHeading>
         <PageHeaderDescription
-          className="max-w-[46.875rem] animate-fade-up"
+          className="animate-fade-up"
+          size="sm"
           style={{ animationDelay: '0.30s', animationFillMode: 'both' }}
         >
           Explore endless inspiration that helps you find the stock photo for
@@ -37,14 +34,17 @@ export default function IndexPage() {
           className="animate-fade-up"
           style={{ animationDelay: '0.40s', animationFillMode: 'both' }}
         >
-          <Search />
+          <div className="sticky top-0 z-50 flex w-full items-center justify-center py-1.5">
+            <div className="flex w-full max-w-2xl items-center justify-center">
+              <Search />
+            </div>
+          </div>
         </PageActions>
       </PageHeader>
 
-      <QueryProvider>
-        <RQPhotoList />
-      </QueryProvider>
+      <PhotoGallery />
+
       <ScrollToTop />
-    </Shell>
+    </>
   )
 }

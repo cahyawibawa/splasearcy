@@ -30,21 +30,19 @@ function PageHeader({
   )
 }
 
-const headingVariants = cva(
-  'font-medium leading-loose tracking-tighter lg:leading-[1.1] ',
-  {
-    variants: {
-      size: {
-        default: 'text-3xl md:text-5xl',
-        sm: 'text-2xl md:text-4xl',
-        lg: 'text-3xl sm:text-5xl md:text-5xl lg:text-6xl',
-      },
+const headingVariants = cva('font-semibold text-gray-900 tracking-tighter', {
+  variants: {
+    size: {
+      default: 'text-3xl md:text-5xl',
+      sm: 'text-2xl md:text-4xl',
+      lg: 'text-3xl sm:text-5xl md:text-5xl lg:text-6xl',
+      xl: 'text-4xl sm:text-5xl',
     },
-    defaultVariants: {
-      size: 'default',
-    },
-  }
-)
+  },
+  defaultVariants: {
+    size: 'default',
+  },
+})
 
 interface PageHeaderHeadingProps
   extends React.HTMLAttributes<HTMLHeadingElement>,
@@ -63,21 +61,18 @@ function PageHeaderHeading({
   )
 }
 
-const descriptionVariants = cva(
-  'max-w-[46.875rem] text-balance text-muted-foreground',
-  {
-    variants: {
-      size: {
-        default: 'text-base sm:text-lg',
-        sm: 'text-sm sm:text-base',
-        lg: 'text-lg sm:text-xl',
-      },
+const descriptionVariants = cva('text-balance text-gray-700', {
+  variants: {
+    size: {
+      default: 'text-base sm:text-lg',
+      sm: 'text-sm',
+      lg: 'text-lg sm:text-xl',
     },
-    defaultVariants: {
-      size: 'default',
-    },
-  }
-)
+  },
+  defaultVariants: {
+    size: 'default',
+  },
+})
 
 interface PageHeaderDescriptionProps
   extends React.HTMLAttributes<HTMLParagraphElement>,
