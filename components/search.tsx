@@ -65,6 +65,7 @@ export default function Search() {
           <Button
             key={trend}
             size="sm"
+            variant="ghost"
             className="h-6 gap-0.5 rounded-full border border-gray-200 bg-gray-50 px-2 text-xs text-gray-900"
             onClick={() => handleTrendingSearch(trend)}
           >
